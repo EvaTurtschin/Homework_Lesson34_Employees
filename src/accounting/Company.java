@@ -2,7 +2,7 @@ package accounting;
 
 import java.util.Arrays;
 
-public class Company {
+public class Company{
 
     private int companySize;
     private Employee[] employees;
@@ -53,4 +53,12 @@ public class Company {
         Arrays.sort(employees, 0, companySize);
     }
 
+
+    public int getCompanySize() {
+        return companySize;
+    }
+
+    public Employee[] getEmployees() {
+        return employees;
+    }
 }

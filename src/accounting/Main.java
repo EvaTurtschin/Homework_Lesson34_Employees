@@ -1,5 +1,8 @@
 package accounting;
 
+import java.sql.SQLOutput;
+import java.util.Arrays;
+
 public class Main {
     /*
     Создать программу для бухгалтерии, которая сможет делать следующее:
@@ -33,12 +36,15 @@ public class Main {
                 (07635, "John", "Snow", 10, 8);
         Employee salesManager3 = new SalesManager
                 (18876, "Barbara", "Streisand", 35, 60, 15);
+        Employee salesManager4 = new SalesManager
+                (12335, "Kate", "Middleton", 35, 70, 15);
 
         company.addEmployee(salesManager1);
         company.addEmployee(salesManager2);
         company.addEmployee(wageEmployee1);
         company.addEmployee(wageEmployee2);
         company.addEmployee(salesManager3);
+        company.addEmployee(salesManager4);
          System.out.println();
 
        company.display();
@@ -52,7 +58,26 @@ public class Main {
         System.out.println("Total salaries of the company = " +company.sumSalary());
 
         company.sortEmplyees();
+        System.out.println("Sort by Last name:");
         company.display();
+        System.out.println();
+
+        System.out.println("Sort by First name and by ID:");
+        Arrays.sort(company.getEmployees(),0, company.getCompanySize(), new FirstNameComparator());
+        company.display();
+        System.out.println();
+
+        System.out.println("Sort by ID:");
+        Arrays.sort(company.getEmployees(),0,company.getCompanySize(), new IDComparator());
+        company.display();
+        System.out.println();
+
+
+
+
+
+
+
 
 
     }
